@@ -1,0 +1,3 @@
+FiveMOverlay Dashboard V3 - kompakte Spielerübersicht
+
+Home zeigt nur Felder, für die im Projekt passende Vio-V-Endpunkte abgefragt werden: Spieler-ID, Nutzername, Spielzeit, Gruppe/Fraktion, Gruppenrang und Nickchanges. Felder ohne bestätigte API-Daten (Anmeldung, Registrierung, Telefon, Fahrzeuglimit, Bewertung) wurden entfernt.

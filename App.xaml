@@ -1,0 +1,53 @@
+<Application x:Class="FiveMOverlay.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <SolidColorBrush x:Key="VioBackground" Color="#FF202020"/>
+        <SolidColorBrush x:Key="VioPanel" Color="#FF292929"/>
+        <SolidColorBrush x:Key="VioPanelLight" Color="#FF333333"/>
+        <SolidColorBrush x:Key="VioAccent" Color="#FFC95452"/>
+        <SolidColorBrush x:Key="VioAccentDark" Color="#FFAE3F3D"/>
+        <SolidColorBrush x:Key="VioText" Color="#FFF4F7FF"/>
+        <SolidColorBrush x:Key="VioMuted" Color="#FFB7B7B7"/>
+        <SolidColorBrush x:Key="VioBorder" Color="#FF414141"/>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            <Setter Property="Background" Value="{StaticResource VioAccent}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="14,9"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="ButtonBorder" Property="Opacity" Value="0.86"/></Trigger>
+                            <Trigger Property="IsEnabled" Value="False"><Setter TargetName="ButtonBorder" Property="Opacity" Value="0.4"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#FF1C1C1C"/>
+            <Setter Property="Foreground" Value="{StaticResource VioText}"/>
+            <Setter Property="CaretBrush" Value="{StaticResource VioAccent}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource VioBorder}"/>
+            <Setter Property="Padding" Value="10,8"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="{StaticResource VioPanelLight}"/>
+            <Setter Property="Foreground" Value="{StaticResource VioText}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource VioBorder}"/>
+            <Setter Property="Padding" Value="6"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="{StaticResource VioText}"/>
+            <Setter Property="Margin" Value="0,3"/>
+        </Style>
+    </Application.Resources>
+</Application>

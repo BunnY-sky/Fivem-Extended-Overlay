@@ -1,43 +1,42 @@
-Hey zusammen! 👋
+# FiveMOverlay
 
-Ich möchte euch mein Projekt FiveMOverlay vorstellen. Es handelt sich um ein externes Windows-Programm, das verschiedene Informationen und individuell konfigurierbare Overlays für FiveM bereitstellt.
+Windows-Overlay-Projekt auf Basis von C# und WPF (.NET 8).
 
-✨ Funktionen
+## Funktionen
 
-Spielerinformationen: Anzeige verfügbarer Spielerdaten über die angebundene Vio-V-API.
+- Drei konfigurierbare Overlay-Seiten
+- Globale Hotkeys (NumPad 0–3)
+- Einstellbare Schriftgröße, Textfarbe und Overlay-Position
+- Konfigurierbare Chat-Kurzbefehle
+- Vio-V-Anmeldung über OAuth Authorization Code + PKCE
 
-Spielzeit: Anzeige der aus der API ausgelesenen Spielzeit.
+## Voraussetzungen
 
-Gruppeninformationen: Anzeige der eigenen Gruppe und des Rangs, sofern diese Daten über die API verfügbar sind.
+- Windows
+- .NET 8 SDK (Windows Desktop / WPF)
+- Für den Installer zusätzlich Inno Setup 6
 
-Mehrere Overlays: Unterstützung für mehrere individuell nutzbare Overlay-Seiten.
+## Projekt bauen
 
-Anpassbares Design: Position und Größe der Overlays können angepasst werden.
+1. Repository herunterladen oder klonen.
+2. PowerShell im Projektordner `FiveMOverlay` öffnen.
+3. Ausführen:
 
-Konfigurierbare Chat-Befehle: Eigene Textvorlagen und Kürzel können eingerichtet werden, beispielsweise um häufig verwendete Texte schneller in den FiveM-Chat einzufügen.
+   ```powershell
+   dotnet restore .\FiveMOverlay.csproj
+   dotnet build .\FiveMOverlay.csproj -c Release
+   ```
 
-Windows-Programm: Das Overlay läuft als separates Programm und muss nicht als normale FiveM-Resource installiert werden.
+Falls `build.ps1` im Projekt enthalten ist, kann es je nach lokaler PowerShell-Ausführungsrichtlinie separat gestartet werden. Prüfe das Skript vor dem Ausführen.
 
-🔐 Anmeldung und API
+## GitHub-Release
 
-Für die Funktionen, die Vio-V-Daten benötigen, ist eine Anmeldung über den vorgesehenen OAuth2-/PKCE-Login erforderlich. Welche Informationen angezeigt werden, hängt von den verfügbaren API-Daten und den erteilten Berechtigungen ab.
+Der Quellcode gehört in das Repository. Den fertigen Installer veröffentlichst du separat unter **Releases** als Release-Asset. Build-Ordner wie `bin/`, `obj/` und `publish/` müssen nicht in das Repository.
 
-🚀 Installation
+## Sicherheit und Zugangsdaten
 
-Die bereitgestellte ZIP-Datei herunterladen.
+Keine Access-Tokens, Passwörter, privaten Schlüssel, Signaturzertifikate oder persönlichen Konfigurationsdateien committen. Die Laufzeit-Einstellungen werden lokal im Benutzerprofil gespeichert. Prüfe alle API-/OAuth-Einstellungen vor einer öffentlichen Veröffentlichung.
 
-Den Inhalt in einen eigenen Ordner entpacken.
+## Hinweis
 
-Die FiveMOverlay.exe starten.
-
-Falls erforderlich, anmelden und die gewünschten Einstellungen konfigurieren.
-
-Die genauen Schritte können je nach veröffentlichter Version abweichen.
-
-⚠️ Hinweise
-
-Das Projekt befindet sich in Weiterentwicklung. Nicht jede Funktion muss in jeder Version bereits vollständig verfügbar sein. Bitte meldet Fehler mit einer Beschreibung des Problems und möglichst einem Screenshot.
-
-Feedback, Verbesserungsvorschläge und Fehlermeldungen sind willkommen! 😊
-
-Viel Spaß beim Ausprobieren!
+Dies ist Quellcode; ein erfolgreicher Build wurde nicht im Rahmen dieses Pakets garantiert. Vor der Veröffentlichung bitte lokal bauen und die Anwendung testen.
